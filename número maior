@@ -1,0 +1,36 @@
+// See https://aka.ms/new-console-template for more information
+Console.WriteLine("Hello, World!");
+double numA, numB, numC;
+
+Console.WriteLine("Insira o número A");
+numA = Convert.ToDouble(Console.ReadLine());
+
+Console.WriteLine("Informe o número B");
+numB = Convert.ToDouble(Console.ReadLine());
+
+Console.WriteLine("Insira o número C");
+numC = Convert.ToDouble(Console.ReadLine());
+
+if (numA > numB)
+{
+    if(numA > numC)
+    {
+        Console.WriteLine("Número A é o maior");
+    }
+}
+
+if (numB > numA)
+{
+    if(numB > numC)
+    {
+        Console.WriteLine("Número B é o maior");
+    }
+}
+
+if (numC > numA)
+{
+    if (numC > numB)
+    {
+        Console.WriteLine("Número C é o maior");
+    }
+}
