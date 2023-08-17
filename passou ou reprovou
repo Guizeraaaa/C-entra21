@@ -1,0 +1,19 @@
+// See https://aka.ms/new-console-template for more information
+using System.ComponentModel.Design;
+
+Console.WriteLine("Hello, World!");
+
+double notaAluno;
+
+Console.WriteLine("Informe sua nota");
+notaAluno = Convert.ToDouble(Console.ReadLine());
+
+if (notaAluno >= 60)
+{
+    Console.WriteLine("Você passou");
+} 
+
+if (notaAluno < 60)
+{
+    Console.WriteLine("Reprovou");
+}
