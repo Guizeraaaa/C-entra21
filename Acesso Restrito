@@ -1,0 +1,30 @@
+// See https://aka.ms/new-console-template for more information
+using System;
+using System.ComponentModel.Design;
+
+Console.WriteLine("Hello, World!");
+//login basico 
+// se nomeusuario == admin e a senha == senha123 pode acessar. se for diferente não 
+
+const string varUsuario = ("Admin");
+const string varSenha = ("Senha123");
+string varUsuarioLog, varSenhaLog;
+
+
+Console.WriteLine("Informe nome de usuario");
+varUsuarioLog = Console.ReadLine();
+
+Console.WriteLine("Informe senha de usuario");
+varSenhaLog = Console.ReadLine();
+
+if (varUsuarioLog == varUsuario)
+{
+    if (varSenhaLog == varSenha)
+    {
+        Console.WriteLine("login Autorizado");
+    }
+}
+else
+{
+    { Console.WriteLine("Usuario ou senha invalida"); }
+}
