@@ -1,0 +1,41 @@
+// See https://aka.ms/new-console-template for more information
+Console.WriteLine("Hello, World!");
+
+double numero;
+
+Console.WriteLine("Digite o número"); 
+numero = Convert.ToDouble(Console.ReadLine());
+
+if (numero % 2 != 0)
+{
+    if(numero >= 0)
+    {
+        Console.WriteLine("é positivo e impar");
+    }
+
+        if (numero <= 0)
+            {
+                Console.WriteLine("é negativo e impar");
+                     }
+
+}
+
+if(numero % 2 == 0)
+{
+    if (numero > 0)
+    {
+        Console.WriteLine("é positivo e par");
+    }
+
+    if (numero < 0)
+    {
+        Console.WriteLine("é negativo e par");
+    }
+
+}
+
+if (numero == 0)
+{
+    Console.WriteLine("Neutro");
+}
+
