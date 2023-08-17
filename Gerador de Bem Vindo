@@ -1,0 +1,30 @@
+// See https://aka.ms/new-console-template for more information
+Console.WriteLine("Hello, World!");
+// solicite o nome e a idade
+// "Bem vindo. {nome} até 12 anos 
+// "olá, [nome] entre 13 e 19 abos 
+// "olá sr.sra [nome]
+
+
+string varNome;
+int varIdade;
+
+Console.WriteLine("Informe seu nome");
+varNome = Console.ReadLine();
+
+Console.WriteLine("Informe sua idade");
+varIdade = Convert.ToInt32(Console.ReadLine());
+
+if (varIdade <= 12)
+{
+    Console.WriteLine($"Bem vindo, {varNome}");
+} 
+else if ( varIdade > 19)
+{
+    Console.WriteLine($"Olá, sr./sra {varNome}");
+}
+
+else
+{
+    Console.WriteLine($"Olá, {varNome}");
+}
