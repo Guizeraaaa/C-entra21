@@ -1,0 +1,16 @@
+// See https://aka.ms/new-console-template for more information
+Console.WriteLine("Hello, World!");
+// programa que calcule preço do produto com desconto de 10% se a compra for <= 100.
+
+double varPreco, varDesc;
+
+Console.WriteLine("Informe o valor do produto");
+varPreco = Convert.ToDouble(Console.ReadLine());
+
+if (varPreco >= 100)
+{
+    varDesc =  varPreco - (varPreco * 0.1);
+    Console.WriteLine($"o valor com 10% de desconto é de: {varDesc}RS");
+        varDesc = Convert.ToDouble(Console.ReadLine());
+   
+}
