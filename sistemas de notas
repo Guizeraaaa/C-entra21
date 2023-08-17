@@ -1,0 +1,20 @@
+// See https://aka.ms/new-console-template for more information
+using System;
+
+Console.WriteLine("Hello, World!");
+double varFreq, varNotaUm, varNotaDois,varNotaTres, mediaNota;
+
+
+Console.WriteLine("Informe  nota Um ");
+varNotaUm = Convert.ToDouble(Console.ReadLine());
+
+Console.WriteLine("Informe  nota Dois ");
+varNotaDois = Convert.ToDouble(Console.ReadLine());
+
+Console.WriteLine("Informe  nota três ");
+varNotaTres = Convert.ToDouble(Console.ReadLine());
+
+mediaNota = (varNotaUm + varNotaDois + varNotaTres) / 3;
+mediaNota = Convert.ToDouble(Console.ReadLine());
+
+Console.WriteLine($"sua média é de {mediaNota}");
