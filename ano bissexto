@@ -1,0 +1,25 @@
+// See https://aka.ms/new-console-template for more information
+using System.ComponentModel.Design;
+using System.Timers;
+
+Console.WriteLine("Hello, World!");
+
+double varAno;
+
+Console.WriteLine("Digite o Ano");
+varAno = Convert.ToDouble(Console.ReadLine());
+
+if (varAno % 4 == 0)
+
+{
+    Console.WriteLine("é bissexto");
+} 
+else if (varAno % 400 == 0)
+{
+    Console.WriteLine("é bissexto");
+}
+
+else
+{
+    Console.WriteLine("Não é bissexto");
+}
