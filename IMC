@@ -1,0 +1,31 @@
+// See https://aka.ms/new-console-template for more information
+Console.WriteLine("Hello, World!");
+// calcular imc falar se esta abaixo do peso, norma, acima do peso ou obeso
+double varP,imc, varA;
+
+Console.WriteLine("Informe seu peso");
+varP = Convert.ToDouble(Console.ReadLine());
+
+Console.WriteLine("Informe sua altura");
+varA = Convert.ToDouble(Console.ReadLine());
+imc = varP / (varA * varA);
+if (imc <= 18.5)
+{
+    Console.WriteLine("Abaixo do peso");
+}
+
+else if (imc <= 24.8)
+{
+    Console.WriteLine("Normal");
+}
+
+else if (imc <= 29.9)
+{
+    Console.WriteLine("Acima do peso");
+}
+
+else
+{
+    Console.WriteLine("Obeso");
+}
+
