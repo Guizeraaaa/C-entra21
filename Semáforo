@@ -1,0 +1,24 @@
+// See https://aka.ms/new-console-template for more information
+Console.WriteLine("Hello, World!");
+
+string corSinal;
+const string corVerde = ("verde");
+
+const string corVermelho = ("vermelho");
+
+Console.WriteLine("Qual a cor do sinal:");
+corSinal = Console.ReadLine();
+
+if (corSinal == corVerde)
+{
+    Console.WriteLine("PODE PASSAR");
+}
+else if (corSinal == corVermelho)
+{
+    Console.WriteLine("NÃO PODE PASSAR");
+}
+
+else
+{
+    Console.WriteLine("ATENÇÂO");
+}
