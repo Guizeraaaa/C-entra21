@@ -1,0 +1,40 @@
+// See https://aka.ms/new-console-template for more information
+Console.WriteLine("Hello, World!");
+// verificar se pode ir no cinema
+//se tiver idade igual ou superior pode ir ou se estiver acompanhado 
+
+int idade;
+int varAcompanhante;
+
+Console.WriteLine("Informe sua idade"); 
+ idade = Convert.ToInt32(Console.ReadLine());
+
+
+if (idade < 18)
+{
+    Console.WriteLine("Se esta com algum responsável digite 1. Caso não esteja digite 2");
+    varAcompanhante = Convert.ToInt32(Console.ReadLine());
+
+    if(varAcompanhante == 1)
+    {
+        Console.WriteLine("Pode assistir" +
+            "");
+    }
+
+    else if (varAcompanhante == 2) {
+        Console.WriteLine("não pode assistir");}
+
+    
+
+
+   
+
+}
+
+
+
+else
+{
+    Console.WriteLine("Pode assistir");
+}
+    
