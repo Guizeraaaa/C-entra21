@@ -1,0 +1,39 @@
+// See https://aka.ms/new-console-template for more information
+//Console.WriteLine("Hello, World!");
+
+
+/* solicitar escolha de idioma
+ *  1 == inglês // 2 == espanhol // 3 == francês 
+ *  imprimir msg de boas vindas no respectivo idioma  */
+
+
+
+Console.WriteLine("SELECIONE UM IDIOMA");
+Console.WriteLine("1: INGLÊS");
+Console.WriteLine("2: ESPANHOL");
+Console.WriteLine("3: FRANCÊS");
+
+
+
+string opcao = "";
+opcao = (Console.ReadLine());
+
+
+switch (opcao)
+{
+    case "1":
+        Console.WriteLine("Welcome");
+        break;
+
+    case "2":
+        Console.WriteLine("Bienvenido");
+        break;
+
+    case "3":
+        Console.WriteLine("Bienvenue");
+        break;
+
+    default: Console.WriteLine("IDIOMA INVÁLIDO");
+        break;
+
+}
