@@ -1,0 +1,22 @@
+// See https://aka.ms/new-console-template for more information
+Console.WriteLine("Hello, World!");
+// crir programa caixa eletronica que pede o saldo e valor
+// se houver "saque autorizado " e se não "saldo insuficiente"
+
+double varSaldo, varValor;
+
+Console.WriteLine("Informe seu saldo");
+varSaldo = Convert.ToDouble(Console.ReadLine());
+
+Console.WriteLine("Informe valor de saque");
+varValor = Convert.ToDouble(Console.ReadLine());
+
+if (varSaldo > varValor)
+{
+    Console.WriteLine("Saque autorizado");
+}
+
+else
+{
+    Console.WriteLine("Saldo insuficiente");
+}
