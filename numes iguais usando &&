@@ -1,0 +1,29 @@
+// See https://aka.ms/new-console-template for more information
+Console.WriteLine("Hello, World!");
+// um programa que peça ao usuário para digitar três números inteiros.
+//Verifique se pelo menos dois dos números são iguais entre si.
+//Se sim, imprima "Pelo menos dois números são iguais"
+// caso contrário, imprima "Nenhum dos números é igual aos outros."
+
+int numUm, numDois, numTres;
+
+Console.WriteLine("Informe o número um");
+numUm = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Informe o número Dois");
+numDois = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Informe o número Três");
+numTres = Convert.ToInt32(Console.ReadLine());
+
+//numIgual = numUm == numDois || numTres;
+
+if(numUm == numDois || numUm == numTres) 
+{
+    Console.WriteLine("Pelo menos dois números são iguais");
+}
+
+else
+{
+    Console.WriteLine("nenhum é igual");
+}
