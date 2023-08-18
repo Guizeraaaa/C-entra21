@@ -1,0 +1,33 @@
+// See https://aka.ms/new-console-template for more information
+using System;
+
+double resultado = 0;
+string opcao = "";
+
+Console.WriteLine("Escolha uma opção");
+Console.WriteLine("A: Metros para centimetros");
+
+Console.WriteLine("B: centimetros para metros");
+opcao = (Console.ReadLine());
+
+
+switch (opcao)
+{
+    case "A":
+        Console.WriteLine("Informe o valor em Metros");
+        double varMetro =Convert.ToDouble(Console.ReadLine());
+        resultado = varMetro * 100;
+        
+       Console.WriteLine($"A conversão é de {resultado} centimetros");
+
+        break;
+
+    case "B":
+        Console.WriteLine("Informe o valor em Centimetros");
+        double varCenti = Convert.ToDouble(Console.ReadLine());
+        resultado = varCenti / 100;
+       
+        Console.WriteLine($"A conversão é de {resultado} metro");
+        break;
+}
+
