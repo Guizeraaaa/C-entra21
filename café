@@ -1,0 +1,29 @@
+// See https://aka.ms/new-console-template for more information
+Console.WriteLine("Hello, World!");
+// programa que pergunta se usuario deseja café se sim perguntar com açucar e depois responder
+
+string varCafe, varCafeDoce;
+
+Console.WriteLine("Você deseja um café?");
+varCafe = Console.ReadLine();
+
+if (varCafe =="Sim"){
+
+    Console.WriteLine("Deseja açucar");
+    varCafeDoce = Console.ReadLine().ToLower();
+    if(varCafeDoce ==("Sim"))
+    {
+        Console.WriteLine("Aqui está seu café doce");
+    }
+    if (varCafeDoce == ("Não"))
+    {
+        Console.WriteLine("Aqui esta seu café com açucar");
+    }
+    
+}
+
+else
+{
+    Console.WriteLine("Tudo Bem");
+}
+
