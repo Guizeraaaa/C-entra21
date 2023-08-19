@@ -1,0 +1,62 @@
+// See https://aka.ms/new-console-template for more information
+
+
+double varCelsius, varFahrenheit, varDol =0f, varReal=0f;
+
+double resulCot;
+string opcao = "";
+
+Console.WriteLine("-----------MENU DE CONVERÇÃO----------------");
+Console.WriteLine("1: Converter Celsius para Fahrenheit");
+Console.WriteLine("2: Converter Fahrenheit para Celsius");
+Console.WriteLine("3: Converter Real para Dólar");
+Console.WriteLine("4: Converter Dólar para Real");
+Console.WriteLine("5: Converter Kilômetros para milhas");
+Console.WriteLine("6: Converter milhas para Kilometros");
+Console.WriteLine("7: Converter metros para pés");
+Console.WriteLine("8: Converter pés para metros");
+Console.WriteLine(" Insira o digito correspondente a sua busca");
+opcao = Console.ReadLine();
+Console.WriteLine("--------------------------------------------");
+
+switch (opcao)
+{
+    case "1":
+        Console.WriteLine("Insira o valor em Celsius");
+        varCelsius = Convert.ToInt32(Console.ReadLine());
+        varFahrenheit = (varCelsius * 1.8) + 32;
+        Console.WriteLine($"A conversão é de: {varFahrenheit}ºF");
+        break;
+
+    case "2":
+        Console.WriteLine("Insira o valor em Fahrenheit");
+        varFahrenheit = Convert.ToInt32(Console.ReadLine());
+        varCelsius = (varFahrenheit - 32) / 1.8;
+        Console.WriteLine($"A conversão é de {varCelsius}ºC");
+
+        break;
+
+    case "3":
+        Console.WriteLine("Insira a cotação do dólar");
+        varDol = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Insira o valor em real");
+        varReal = Convert.ToDouble(Console.ReadLine());
+        resulCot = varDol / varReal;
+        
+     Console.WriteLine($"{resulCot}");
+        resulCot = Convert.ToDouble(Console.ReadLine());
+
+
+        break;
+
+    case "4":
+        Console.WriteLine("Insira o valor em Dólar");
+        varDol = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Insira a cotação do Real");
+        varReal = Convert.ToDouble(Console.ReadLine());
+        resulCot = varDol * varReal;
+        Console.WriteLine($"O valor em Real É DE {resulCot} R$");
+
+
+        break;
+
