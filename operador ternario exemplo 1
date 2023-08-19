@@ -1,0 +1,20 @@
+// See https://aka.ms/new-console-template for more information
+Console.WriteLine("Hello, World!");
+//função chamada VerificarParidade que recebe um número inteiro como argumento e retorna uma string "Par" se o número for par e "Ímpar" se for ímpar
+
+
+
+string digito = "";
+double num;
+
+
+
+
+
+Console.WriteLine("Informe um número");
+num = Convert.ToDouble(Console.ReadLine());
+
+
+ digito =  (num % 2 == 0)? "è par" : " é impar";
+
+Console.WriteLine($"{digito}");
