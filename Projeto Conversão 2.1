@@ -1,0 +1,276 @@
+// See https://aka.ms/new-console-template for more information
+//.WriteLine("Hello, World!");
+
+double varCelsius, varFahrenheit, varDol, varReal, varKM, varMilhas, varPes, varMetros, resulCot;
+int opcao1, varLanguage;
+
+
+Console.WriteLine("1: Português");
+Console.WriteLine("2: English");
+Console.WriteLine("SELECT YOUR LANGUAGE");
+varLanguage = Convert.ToInt32(Console.ReadLine());
+
+switch (varLanguage) {
+    case 1:
+
+        Console.WriteLine("-----------MENU DE CONVERÇÕES ----------------");
+        Console.WriteLine("1: Converter Graus");
+        Console.WriteLine("2: Converter Valor do Dinheiro");
+        Console.WriteLine("3: Converter Distância");
+        Console.WriteLine(" Insira o digito correspondente a sua busca");
+        opcao1 = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("--------------------------------------------");
+
+
+        if (opcao1 == 1)
+        {
+            Console.WriteLine("Digite uma das opções");
+            Console.WriteLine("1: Converter Celsius para Fahrenheit");
+            Console.WriteLine("2: Converter Fahrenheit para Celsius");
+            int opcao2 = Convert.ToInt32(Console.ReadLine());
+
+            switch (opcao2)
+            {
+                case 1:
+                    Console.WriteLine("Insira o valor em Celsius");
+                    varCelsius = Convert.ToDouble(Console.ReadLine());
+                    varFahrenheit = (varCelsius * 1.8) + 32;
+                    Console.WriteLine($"A conversão é de: {varFahrenheit.ToString("F1")}ºF");
+                    break;
+
+                case 2:
+                    Console.WriteLine("Insira o valor em Fahrenheit");
+                    varFahrenheit = Convert.ToDouble(Console.ReadLine());
+                    varCelsius = (varFahrenheit - 32) / 1.8;
+                    Console.WriteLine($"A conversão é de {varCelsius.ToString("F1")}ºC");
+
+                    break;
+                default:
+
+                    Console.WriteLine("Opção Incorreta");
+
+                    break;
+            }
+        }
+        else if (opcao1 == 2)
+        {
+            Console.WriteLine("Digite uma das opções");
+            Console.WriteLine("1: Converter Real para Dólar");
+            Console.WriteLine("2: Converter Dólar para Real");
+            int opcao3 = Convert.ToInt32(Console.ReadLine());
+
+
+            switch (opcao3)
+            {
+                case 1:
+                    Console.WriteLine("Insira o valor em real");
+                    varReal = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Insira a cotação do Dólar");
+                    varDol = Convert.ToDouble(Console.ReadLine());
+                    resulCot = varReal * varDol;
+
+                    Console.WriteLine($"O valor em dólar é de $ {resulCot}");
+
+
+                    break;
+
+                case 2:
+                    Console.WriteLine("Insira o valor em Dólar");
+                    varDol = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Insira a cotação do Real");
+                    varReal = Convert.ToDouble(Console.ReadLine());
+                    resulCot = varDol * varReal;
+                    Console.WriteLine($"O valor em Real é de R$ {resulCot}");
+
+
+                    break;
+                default:
+
+                    Console.WriteLine("Opção Incorreta");
+
+
+                    break;
+            }
+        }
+        else if (opcao1 == 3)
+        {
+            Console.WriteLine("Digite uma das opções");
+            Console.WriteLine("1: Converter Kilômetros para milhas");
+            Console.WriteLine("2: Converter milhas para Kilometros");
+            Console.WriteLine("3: Converter metros para pés");
+            Console.WriteLine("4: Converter pés para metros");
+            int opcao4 = Convert.ToInt32(Console.ReadLine());
+
+            switch (opcao4)
+            {
+                case 1:
+                    Console.WriteLine("Insira o valor em quilômetros");
+                    varKM = Convert.ToDouble(Console.ReadLine());
+                    varMilhas = varKM / 1.609;
+                    Console.WriteLine($"A conversão é de: {varMilhas} Milhas");
+                    break;
+
+                case 2:
+                    Console.WriteLine("Insira o valor em Milhas");
+                    varMilhas = Convert.ToDouble(Console.ReadLine());
+                    varKM = varMilhas * 1.6;
+                    Console.WriteLine($"A conversão é de: {varKM} Quilômetros)");
+                    break;
+
+                case 3:
+                    Console.WriteLine("Insira o valor em metros de altura");
+                    varMetros = Convert.ToDouble(Console.ReadLine());
+                    varPes = varMetros * 3.2808;
+                    Console.WriteLine($"A conversão é de: {varPes} Pés de altura");
+                    break;
+
+                case 4:
+                    Console.WriteLine("Insira o valor em Pés de altura");
+                    varPes = Convert.ToDouble(Console.ReadLine());
+                    varMetros = varPes * 0.3048;
+                    Console.WriteLine($"A conversão é de: {varMetros} Metros de altura");
+                    break;
+
+
+            }
+        }
+        else
+        {
+            Console.WriteLine("Digito incorreto");
+        }
+        Console.ReadLine();
+
+        break;
+
+    case 2:
+        Console.WriteLine("-----------Scale Switch Menu ----------------");
+        Console.WriteLine("1: Convert Degrees");
+        Console.WriteLine("2: Convert Value to Money");
+        Console.WriteLine("3: Convert Distance");
+        Console.WriteLine(" Enter the digit corresponding to your search");
+        opcao1 = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("--------------------------------------------");
+
+
+        if (opcao1 == 1)
+        {
+            Console.WriteLine("Choose one of the options");
+            Console.WriteLine("1: Convert Celsius to Fahrenheit");
+            Console.WriteLine("2: Convert Fahrenheit to Celsius");
+            int opcao2 = Convert.ToInt32(Console.ReadLine());
+
+            switch (opcao2)
+            {
+                case 1:
+                    Console.WriteLine("Enter the value in Celsius");
+                    varCelsius = Convert.ToDouble(Console.ReadLine());
+                    varFahrenheit = (varCelsius * 1.8) + 32;
+                    Console.WriteLine($"The conversion is:{varFahrenheit.ToString("F1")}ºF");
+                    break;
+
+                case 2:
+                    Console.WriteLine("Enter the value in Fahrenheit");
+                    varFahrenheit = Convert.ToDouble(Console.ReadLine());
+                    varCelsius = (varFahrenheit - 32) / 1.8;
+                    Console.WriteLine($"The conversion is: {varCelsius.ToString("F1")}ºC");
+
+                    break;
+                default:
+
+                    Console.WriteLine("invalid option");
+
+                    break;
+            }
+        }
+        else if (opcao1 == 2)
+        {
+            Console.WriteLine("Choose one of the options");
+            Console.WriteLine("1: Convert Real to Dollar");
+            Console.WriteLine("2: Convert Dollar to Real");
+            int opcao3 = Convert.ToInt32(Console.ReadLine());
+
+
+            switch (opcao3)
+            {
+                case 1:
+                    Console.WriteLine("Enter the value in real");
+                    varReal = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Enter the dollar rate");
+                    varDol = Convert.ToDouble(Console.ReadLine());
+                    resulCot = varReal * varDol;
+
+                    Console.WriteLine($"The dollar value is $ {resulCot}");
+
+
+                    break;
+
+                case 2:
+                    Console.WriteLine("Enter the dollar amount:");
+                    varDol = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Enter the real rate");
+                    varReal = Convert.ToDouble(Console.ReadLine());
+                    resulCot = varDol * varReal;
+                    Console.WriteLine($"The real value is R$ {resulCot}");
+
+
+                    break;
+                default:
+
+                    Console.WriteLine("invalid option");
+
+
+                    break;
+            }
+        }
+        else if (opcao1 == 3)
+        {
+            Console.WriteLine("Choose one of the options");
+            Console.WriteLine("1: Convert Kilometers to Miles");
+            Console.WriteLine("2: Convert Miles to Kilometers");
+            Console.WriteLine("3: Convert meters to feet");
+            Console.WriteLine("4: Convert feet to meters");
+            int opcao4 = Convert.ToInt32(Console.ReadLine());
+
+            switch (opcao4)
+            {
+                case 1:
+                    Console.WriteLine("Enter the value in kilometers");
+                    varKM = Convert.ToDouble(Console.ReadLine());
+                    varMilhas = varKM / 1.609;
+                    Console.WriteLine($"The conversion is: {varMilhas} Miles");
+                    break;
+
+                case 2:
+                    Console.WriteLine("Enter the value in Miles");
+                    varMilhas = Convert.ToDouble(Console.ReadLine());
+                    varKM = varMilhas * 1.6;
+                    Console.WriteLine($"The conversion is: {varKM} Kilometers)");
+                    break;
+
+                case 3:
+                    Console.WriteLine("Enter the value in meters high");
+                    varMetros = Convert.ToDouble(Console.ReadLine());
+                    varPes = varMetros * 3.2808;
+                    Console.WriteLine($"The conversion is: {varPes} Feet High");
+                    break;
+
+                case 4:
+                    Console.WriteLine("Enter the value in Feet Height");
+                    varPes = Convert.ToDouble(Console.ReadLine());
+                    varMetros = varPes * 0.3048;
+                    Console.WriteLine($"The conversion is: {varMetros} Meters High");
+                    break;
+
+
+            }
+        }
+        else
+        {
+            Console.WriteLine("invalid option");
+        }
+        Console.ReadLine();
+
+        break;
+}
+
+
