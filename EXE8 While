@@ -1,0 +1,21 @@
+// See https://aka.ms/new-console-template for more information
+Console.WriteLine("Hello, World!");
+
+
+Console.Write("Digite um número inteiro positivo: ");
+int numero = Convert.ToInt32(Console.ReadLine());
+
+if (numero >= 0)
+{
+    Console.WriteLine($"Contagem regressiva a partir de {numero}:");
+
+    while (numero >= 0)
+    {
+        Console.WriteLine(numero);
+        numero--;
+    }
+}
+else
+{
+    Console.WriteLine("O número deve ser inteiro positivo.");
+}
