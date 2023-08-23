@@ -1,0 +1,30 @@
+double varNota = 0; 
+double varTotal = 0; 
+int countNotas = 0; 
+while (true) 
+{
+    varNota = Convert.ToDouble(Console.ReadLine());
+
+    if (varNota == -1) 
+        break; 
+
+    if (varNota >= 0 && varNota <= 10) 
+    {
+        varTotal += varNota; 
+        countNotas++; 
+    }
+    else
+    {
+        Console.WriteLine("Nota inválida. Insira uma nota entre 0 e 10.");
+    }
+}
+
+if (countNotas > 0) 
+{
+    double media = varTotal / countNotas; 
+    Console.WriteLine("A média das notas é: " + media);
+}
+else
+{
+    Console.WriteLine("Nenhuma nota válida foi inserida.");
+}
