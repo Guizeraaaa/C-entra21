@@ -1,0 +1,17 @@
+// See https://aka.ms/new-console-template for more information
+Console.WriteLine("Hello, World!");
+Console.Write("Digite um número inteiro: ");
+int numero = Convert.ToInt32(Console.ReadLine());
+
+int soma = 0; 
+
+int numeroOriginal = numero; 
+
+while (numero > 0)
+{
+    int digito = numero % 10; 
+    soma += digito; 
+    numero /= 10; 
+}
+
+Console.WriteLine($"A soma dos dígitos de {numeroOriginal} é: {soma}");
