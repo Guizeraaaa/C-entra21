@@ -1,0 +1,13 @@
+// See https://aka.ms/new-console-template for more information
+Console.WriteLine("Hello, World!");
+
+int fibonacci=-1, resulfibonacci=0, resultfibo2=-2, result1=0, result2=0,result3=0;
+
+for (int  i = 0; i <= 21 ; i++)
+{
+    result1 = i - fibonacci;
+    result2 = i - resultfibo2;
+    result3 = result1 + result2;
+        
+    Console.WriteLine(result3);
+}
