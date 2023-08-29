@@ -1,0 +1,51 @@
+namespace new_projeto_função_FIBO
+{
+    internal class Program
+    {
+
+        public static int ContarFibo(int fibo)
+        {
+           
+           
+
+            int nAnterior = 0, nAtual = 1, fibonacci;
+
+
+            for (int i = 0; i <= fibo; i++)
+            {
+                
+                fibonacci = nAnterior + nAtual;
+                Console.WriteLine(fibonacci);
+                nAnterior = nAtual;
+                nAtual = fibonacci;
+                  
+               
+            }
+
+            return fibo;
+        
+        
+        }
+
+
+
+
+    static void Main(string[] args)
+        {
+            
+
+
+            Console.WriteLine("Informe um número referente a sequência");
+            int sequencia = Convert.ToInt32(Console.ReadLine());
+
+            sequencia = ContarFibo(sequencia);
+
+           
+        
+        
+        
+        
+        
+        }
+    }
+}
