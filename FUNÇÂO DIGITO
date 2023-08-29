@@ -1,0 +1,71 @@
+namespace FunçãoDigito
+{
+    internal class Program
+    {
+        public static string ContarDigito(string digito) 
+        {
+            
+            
+            
+          Console.WriteLine("o número de digitos é " + digito.Length.ToString());
+
+            return digito;
+        }
+
+
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello, World!");
+
+
+
+            Console.WriteLine("Informe um número inteiro");
+            string numInteiro = Console.ReadLine();
+
+            numInteiro = ContarDigito(numInteiro);
+           
+
+            
+
+
+
+
+
+
+
+        }
+    
+    
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    }
+
+
+
+
+
+}
