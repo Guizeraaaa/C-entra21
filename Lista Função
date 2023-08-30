@@ -1,0 +1,127 @@
+namespace FUNÇÂO_FATORIAL
+{
+    internal class Program
+    {
+
+        public static string ChamarMenu() { 
+        Console.WriteLine("Menu Exercicios");
+            Console.WriteLine("1 - Exercício Somar");
+            Console.WriteLine("2 - Exercicio Fatorial");
+            Console.WriteLine("3 - Exercício número primo");
+            Console.WriteLine("4 - Exercício lista de inteiros");
+            Console.WriteLine("5 - Exercício String Invertida");
+            Console.WriteLine("6 - Exercício média de nota");
+            Console.WriteLine("7 - Exercício Palíndromo");
+            Console.WriteLine("8 - Exercício Converção Temperatura");
+            Console.WriteLine("9 - Exercício Array Strings");
+            Console.WriteLine("10 - Exercício MDC");
+            Console.WriteLine("11 - Exercício Inteiro para Par");
+            Console.WriteLine("12 - Exercício Elemento Lista");
+            Console.WriteLine("13 - Exercício Maiusculo para Minusculo");
+            Console.WriteLine("14 - Exercício Fibonacci");
+            Console.WriteLine("15 - Exercicio Positivo Negativo ou Zero");
+            Console.WriteLine("0 - Sair");
+
+        return Console.ReadLine();
+
+        }
+        public static string ChamarNúmero()
+        {
+            double numUm, numDois;
+            Console.WriteLine("Informe um número");
+            numUm = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Informe o segundo número");
+            numDois = Convert.ToDouble(Console.ReadLine());
+
+            return Console.ReadLine();
+
+
+        } 
+
+        public static double ChamarSoma(double numUm, double numDois)
+        {
+            double resultado;
+            Console.WriteLine("Informe um número");
+            numUm = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Informe o segundo número");
+            numDois = Convert.ToDouble(Console.ReadLine());
+           resultado = numUm + numDois;
+            return resultado;
+        }
+
+
+
+
+
+
+
+
+           public static void Main(string[] args)
+        { 
+            
+            while (true) {
+            switch (ChamarMenu())
+            {
+                case "0": return; 
+                    break;
+                
+                    case "1":
+                        double numUm, numDois;
+                        Console.WriteLine(ChamarSoma(numUm,numDois));
+                    break;
+
+            
+                
+                
+                
+                
+                }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        }   }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    }
+}
