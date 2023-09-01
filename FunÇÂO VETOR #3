@@ -1,0 +1,358 @@
+namespace FUNÇÂO_FATORIAL
+{
+    internal class Program
+    {
+
+        public static string ChamarMenu()
+        {
+            Console.WriteLine("Menu Exercicios");
+            Console.WriteLine("1 - Exercício Somar");
+            Console.WriteLine("2 - Exercicio Fatorial");
+            Console.WriteLine("3 - Exercício número primo");
+            Console.WriteLine("4 - Exercício lista de inteiros");
+            Console.WriteLine("5 - Exercício String Invertida");
+            Console.WriteLine("6 - Exercício média de nota");
+            Console.WriteLine("7 - Exercício Palíndromo");
+            Console.WriteLine("8 - Exercício Converção Temperatura");
+            Console.WriteLine("9 - Exercício Array Strings");
+            Console.WriteLine("10 - Exercício MDC");
+            Console.WriteLine("11 - Exercício Inteiro para Par");
+            Console.WriteLine("12 - Exercício Elemento Lista");
+            Console.WriteLine("13 - Exercício Maiusculo para Minusculo");
+            Console.WriteLine("14 - Exercício Fibonacci");
+            Console.WriteLine("15 - Exercicio Positivo Negativo ou Zero");
+            Console.WriteLine("0 - Sair");
+
+            return Console.ReadLine();
+
+        }
+        public static char ChamarPalavra(char palavra)
+        {
+            char varPalavra;
+            Console.WriteLine("Digite uma palavra");
+            varPalavra = Convert.ToChar(Console.ReadLine());
+
+            return varPalavra;
+        }
+
+        static string Inverter(string palavra)
+        {
+            string novaPalavra = "";
+            for (int i = palavra.Length - 1; i >= 0; i--)
+            {
+                novaPalavra += palavra[i];
+            }
+
+
+
+            return novaPalavra;
+        }
+
+        static public void VerificarPalindromo(){
+            string palavra;
+            Console.WriteLine("Informe uma Palavra");
+            palavra = Console.ReadLine();
+            
+            if (palavra == Inverter(palavra))
+            {
+                Console.WriteLine("É um Palindromo");
+
+            }
+            else
+            {
+                Console.WriteLine("Não é um Palindromo");
+            }
+        
+        }
+
+        static public void ProcessarTemp() {
+            double varFarenheit;
+            double celcius = ChamarNúmero("Informe a temperatura em Celsius");
+            varFarenheit = (celcius * 1.8) + 32;
+            Console.WriteLine($"A conversão é de: {varFarenheit.ToString("F1")}ºF");
+        }
+
+
+
+        public static double ChamarNúmero(string msg)
+        {
+            Console.WriteLine(msg);
+
+
+            return Convert.ToDouble(Console.ReadLine());
+
+
+        }
+        public static int ChamarNúmeroInteiro(string msg)
+        {
+            Console.WriteLine(msg);
+
+
+            return Convert.ToInt32(Console.ReadLine());
+
+
+        }
+        public static void AdicionarlIsta()
+        {
+            int[] numero = new int[5];
+
+            for (int i = 1; i < 5; i++)
+            {
+                numero[i] = ChamarNúmeroInteiro($"Informe o valor {i}");
+
+            }
+
+           
+            Console.WriteLine($" e o valor maximo é: {numero.Max()}");
+        }
+
+        public static void FazerMedia()
+        {
+            double n1 = ChamarNúmero("Informe a quantidade de notas");
+            
+            double result = 0;
+
+            for (int i = 0; i < n1; i++)
+            {
+
+                result += ChamarNúmero($"Informe a sua nota{i}");
+
+
+            }
+
+            result = result / n1;
+            Console.WriteLine($"A média é de {result.ToString("F2")}");
+
+        }
+
+
+
+
+
+        public static int Fatorar(int varFat, int varFatDois)
+        {
+            do
+            {
+
+                varFatDois = varFatDois * varFat;
+                varFat--;
+
+
+            } while (varFat >= 1);
+            return varFatDois;
+
+        }
+        static bool VerificarPrimo(int num)
+        {
+            if (num <= 1)
+                return false;
+
+            if (num <= 3)
+                return true;
+
+            if (num % 2 == 0 || num % 3 == 0)
+                return false;
+
+            for (int i = 5; i * i <= num; i += 6)
+            {
+                if (num % i == 0 || num % (i + 2) == 0)
+                    return false;
+            }
+
+            return true;
+        }
+
+        static void ProcessarPrimo()
+        {
+
+            Console.WriteLine("DIGIte um número inteiro positivo");
+            int n1 = Convert.ToInt32(Console.ReadLine());
+
+            if (VerificarPrimo(n1))
+            {
+                Console.WriteLine($"{n1} é um número primo");
+                    }
+
+            else { Console.WriteLine($"{n1} não é um número primo"); }
+
+
+                }
+
+        static void ProcessarFatoracao()
+        {
+            int n1 = ChamarNúmeroInteiro("Informe um número");
+            int n2 = 1;
+            Console.WriteLine($"O resultado da fatoração é de {Fatorar(n1, n2)}");
+
+                }
+
+        public static double Somar(double numUm, double numDois)
+        {
+            double resultado;
+            resultado = numUm + numDois;
+            return resultado;
+                }
+
+        static void ProcessarSoma()
+        {
+            double n1 = ChamarNúmero("Digite o primeiro número");
+            double n2 = ChamarNúmero("Digite o segundo número");
+            Console.WriteLine($"A soma é de {Somar(n1, n2)}");
+
+             }
+
+        
+
+        static int CalcularMDC(int a, int b)
+        {
+            while (b != 0)
+                {
+                int temp = b;
+                b = a % b;
+                a = temp;
+                        }
+            return a;
+                    }
+
+
+        static void ProcessarMdc()
+        {
+
+            Console.Write("Digite o primeiro número: ");
+            int num1 = int.Parse(Console.ReadLine());
+
+            Console.Write("Digite o segundo número: ");
+            int num2 = int.Parse(Console.ReadLine());
+
+            int mdc = CalcularMDC(num1, num2);
+
+            Console.WriteLine($"O MDC de {num1} e {num2} é {mdc}");
+                }
+
+        static public int SepararPalavras(int a, string[] b)
+        {
+          int palavrasMaiores = 0; 
+
+                for (int i = 0; i < a;i++)
+            {
+                if (b[i].Length > 5) { 
+                palavrasMaiores++;}
+            }
+        return palavrasMaiores;
+        }
+            
+           
+
+
+
+
+        public static void Main(string[] args)
+        {
+
+            while (true)
+            {
+                switch (ChamarMenu())
+                {
+                    case "0":
+                        return;
+                        break;
+
+                    case "1":
+                        ProcessarSoma();
+                        break;
+
+                    case "2":
+                        ProcessarFatoracao();
+                        break;
+
+                    case "3":
+                        ProcessarPrimo();
+                        break;
+
+                    case "4":
+                        AdicionarlIsta();
+                        break;
+
+                    case "5":
+                        Console.WriteLine("Digite a palavra");
+                        string palavra = Console.ReadLine();
+                        Console.WriteLine(Inverter(palavra));
+                        Console.ReadLine();
+                        break;
+
+                    case "6":
+                        FazerMedia();
+                        break;
+
+                    case "7":
+                        VerificarPalindromo();
+                        break;
+
+                    case "8":
+                        ProcessarTemp();
+                        break;
+
+                    case "9":
+                        
+                        Console.WriteLine("Informe a quantidade de palavras");
+                        int qtPalavras = Convert.ToInt32(Console.ReadLine());
+
+                        
+                        string[] ArrayPalavra = new string[qtPalavras];
+
+                        for (int i = 0; i < qtPalavras; i++)
+                        {
+                            Console.WriteLine($"Digite sua {i+1} palavra");
+                            ArrayPalavra[i] = Console.ReadLine();
+                        }
+                        int palavrasMaiores = SepararPalavras(qtPalavras, ArrayPalavra);
+                        Console.WriteLine($"São {palavrasMaiores}");
+                           
+                            break;
+
+                    case "10":
+                        ProcessarMdc();
+                        break;
+
+
+
+
+
+
+
+
+
+                }
+
+
+
+
+
+
+
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+}
