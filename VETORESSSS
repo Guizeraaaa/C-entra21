@@ -1,0 +1,272 @@
+namespace ARRAY_E_FUNÇÕES
+{
+    internal class Program
+    {
+
+        static string ChamarMenu(string a = "")
+        {
+            Console.WriteLine("Menu de Exercícios Arrays");
+            Console.WriteLine("1 : Soma e Média");
+            Console.WriteLine("2 : Maior e Menor Valor");
+            Console.WriteLine("3 : Pares e Ímpares");
+            Console.WriteLine("4 : Busca por Valor");
+            Console.WriteLine("5 : Inversão de Vetor");
+            Console.WriteLine("6 : Contagem de Elementos");
+            Console.WriteLine("7 : Mescla de Vetores");
+            string opcao = Console.ReadLine();
+
+            return opcao;
+
+        }
+
+        static int Somar(int n1, int n2)
+        {
+            int resultado = 0;
+            resultado = n1 + n2;
+
+            return resultado;
+        }
+
+        static void InverterVetor(int[] vetor)
+        {
+            int tamanho = vetor.Length;
+            for (int i = 0; i < tamanho / 2; i++)
+            {
+                // Troca os elementos nas posições i e tamanho - 1 - i
+                int temp = vetor[i];
+                vetor[i] = vetor[tamanho - 1 - i];
+                vetor[tamanho - 1 - i] = temp;
+            }
+        }
+
+        static void ImprimirVetor(int[] vetor)
+        {
+            foreach (int elemento in vetor)
+            {
+                Console.Write(elemento + " ");
+            }
+            Console.WriteLine();
+        }
+
+        static bool VerificarVetor(int[] vetor, int elemento)
+        {
+            foreach (int valor in vetor)
+            {
+
+                if (valor == elemento) return true;
+
+
+
+
+            }
+            return false;
+        
+
+
+        
+
+        }
+
+
+        static int ContarOcorrencias(int[] vetor, int valor)
+        {
+            int contador = 0;
+
+            foreach (int elemento in vetor)
+            {
+                if (elemento == valor)
+                {
+                    contador++;
+                }
+            }
+
+            return contador;
+        }
+    
+
+
+    static void Main(string[] args)
+        {
+            while (true)
+            {
+                string opcao = ChamarMenu();
+
+                switch (opcao)
+                {
+                    case "1":
+                        int[] numerosInteiros = new int[5];
+                        int soma = 0;
+                        for (int i = 0; i < numerosInteiros.Length; i++)
+                        {
+                            Console.WriteLine($"Digite o valor {i + 1}");
+                            numerosInteiros[i] = Convert.ToInt32(Console.ReadLine());
+
+                        }
+                        for (int i = 0; i < numerosInteiros.Length; i++)
+                        {
+                            soma += numerosInteiros[i];
+                        }
+
+                        Console.WriteLine($"A soma é de {soma} e a média é de {soma / 5}");
+                        break;
+
+                    case "2":
+                        Console.WriteLine("Digite a quantidade de digitos");
+                        int digitos = Convert.ToInt32(Console.ReadLine());
+                        double[] numero = new double[digitos];
+                        double temp = 0;
+                        double tempMin = 0;
+                        for (int i = 0; i < digitos; i++)
+                        {
+                            Console.WriteLine($"Insira o valor {i + 1}");
+                            numero[i] = Convert.ToDouble(Console.ReadLine());
+
+                            if (i == 0)
+                            { tempMin = numero[i]; }
+                        }
+
+
+                        for (int i = 0; i < digitos; i++)
+                        {
+                            if (numero[i] > temp)
+                            {
+                                temp = numero[i];
+
+                            }
+
+                            if (numero[i] < tempMin)
+                            {
+                                tempMin = numero[i];
+                            }
+
+                        }
+                        Console.WriteLine(temp);
+                        Console.WriteLine(tempMin);
+                        break;
+
+                    case "3":
+                        Console.WriteLine("Informe a quantidade de números dentro do vetor:");
+                        int qntNumeros = Convert.ToInt32(Console.ReadLine());
+                        int[] numeros = new int[qntNumeros];
+                        int[] numerosImpares = new int[qntNumeros];
+                        int[] numerosPares = new int[qntNumeros];
+
+
+                        int numPar = 0;
+                        int numImpar = 0;
+
+                        for (int i = 0; i < qntNumeros; i++)
+                        {
+                            Console.WriteLine($"Digite o número {i + 1} ");
+                            numeros[i] = Convert.ToInt32(Console.ReadLine());
+
+                        }
+
+                        for (int i = 0; i < qntNumeros; i++)
+                        {
+                            if (numeros[i] % 2 == 0)
+                            {
+                                numerosPares[numPar] = numeros[i];
+                                numPar++;
+                            }
+
+
+                            else
+                            {
+                                numerosImpares[numImpar] = numeros[i];
+                                numImpar++;
+
+
+                            }
+
+
+                        }
+
+                        for (int i = 0; i < numPar; i++)
+                        {
+                            Console.WriteLine($" OS números pares são: {numerosPares[i]} ");
+
+
+                        }
+
+                        Console.WriteLine();
+
+                        for (int i = 0; i < numImpar; i++)
+                        {
+                            Console.WriteLine(
+
+                                $"OS números impares são {numerosImpares[i]}");
+
+                        }
+
+                        Console.WriteLine();
+                        break;
+
+                    case "4":
+                      
+                        int[] arrayElemento = {1,2,3,5,6};
+                        
+
+                        Console.WriteLine("Insira o valor para encontrar");
+                        int valorEncontrar = Convert.ToInt32(Console.ReadLine());   
+
+                       bool valorIgual = VerificarVetor(arrayElemento, valorEncontrar);
+
+                        if (valorIgual)
+                        {
+                            Console.WriteLine($" verdadeiro");
+                        }
+
+                        else
+                        {
+                            Console.WriteLine($" falso");
+                        }
+
+
+
+                        break;
+
+                    case "5":
+                        int[] vetor = { 1, 2, 3, 4, 5 };
+
+                        Console.WriteLine("Vetor original:");
+                        ImprimirVetor(vetor);
+
+                        // Inverte a ordem dos elementos no vetor
+                        InverterVetor(vetor);
+
+                        Console.WriteLine("Vetor invertido:");
+                        ImprimirVetor(vetor);
+
+                        break;
+
+                    case "6":
+                        int[] vetorcs6 = { 1, 2, 3, 4, 2, 5, 2 };
+                        int valorProcurado = 2;
+
+                        int quantidade = ContarOcorrencias(vetorcs6, valorProcurado);
+
+                        Console.WriteLine($"O valor {valorProcurado} aparece {quantidade} vezes no vetor.");
+                        break;
+
+                    case "7":
+
+                        break;
+
+                    default:
+                        return;
+                        break;
+
+                }
+
+
+            }
+            
+        
+        
+        
+        
+        }
+
+    }
+}
