@@ -1,0 +1,65 @@
+using System.Runtime.Intrinsics.X86;
+using System.Xml;
+
+namespace EXERCICIO__3_MATRIZ
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int varTemp = 0;
+            Console.WriteLine("Hello, World!");
+
+
+           // Implemente um programa que encontra e exibe o maior elemento em cada linha de uma matriz.
+           int [,] matrizOriginal = new int[2,2];
+            int[,] matrizMaior = new int[2,1];  
+          int  maior = 0;
+
+           
+           
+            
+            
+            
+   
+            for (int linha = 0; linha < matrizOriginal.GetLength(0); linha++)
+            {
+                for ( int coluna = 0; coluna < matrizOriginal.GetLength(1); coluna++)
+                {
+                    Console.WriteLine($"Informe o valor da linha " + linha + " e da coluna " + coluna);
+                    matrizOriginal[linha,coluna] = Convert.ToInt32(Console.ReadLine());
+                    matrizMaior[linha, 0] = matrizOriginal[linha,coluna];
+
+
+            
+
+                }
+
+            }
+          for (int linha = 0; linha < matrizOriginal.GetLength(0); linha++)
+            {
+                for( int coluna = 0; coluna < matrizOriginal.GetLength(1); coluna++)
+                {
+                    if (matrizOriginal[linha,coluna] > matrizMaior[linha, 0])
+                    {
+                        matrizMaior[linha,0] = matrizOriginal[linha, coluna];
+                    }
+                }
+            }
+
+            for (int linha = 0; linha < matrizMaior.GetLength(0); linha++)
+            {
+                for (int coluna = 0; coluna < matrizMaior.GetLength(1); coluna++)
+                {
+                    Console.WriteLine("O maior valor na linha é" + matrizMaior[linha, 0]);
+                }
+            }
+
+
+
+
+
+
+        }
+    }
+}
