@@ -1,0 +1,45 @@
+namespace EXERCICIO_DOIS_MATRIZ
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int[,] matrizOriginal = new int[3, 3];
+
+            int[,] matrizTransposta = new int[3, 3];
+
+            for (int linha = 0; linha < matrizOriginal.GetLength(0); linha++)
+            {
+                for (int coluna = 0; coluna < matrizOriginal.GetLength(1); coluna++)
+                {
+                    Console.WriteLine("Insira o valor da linha" + linha + "E da coluna" + coluna);
+                    matrizOriginal[coluna, linha] = Convert.ToInt32(Console.ReadLine());
+
+                    
+                }
+            }
+
+            for (int linhaDois = 0; linhaDois < matrizOriginal.GetLength(0); linhaDois++)
+            {
+                for (int colunaDois = 0; colunaDois < matrizOriginal.GetLength(1); colunaDois++)
+                {
+                    matrizTransposta[colunaDois, linhaDois] = matrizOriginal[linhaDois, colunaDois];
+                }
+            }
+
+            Console.WriteLine("Matriz Transposta:");
+            for (int linha = 0; linha < matrizTransposta.GetLength(0); linha++)
+            {
+                for (int coluna = 0; coluna < matrizTransposta.GetLength(1); coluna++)
+                {
+                    Console.Write(matrizTransposta[linha, coluna] + " ");
+                }
+                Console.WriteLine(); 
+            }
+
+
+
+        }
+    }
+}
