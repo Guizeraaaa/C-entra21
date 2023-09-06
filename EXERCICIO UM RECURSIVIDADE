@@ -1,0 +1,99 @@
+namespace RECURSDIVIDADE_EXE_1;
+
+
+    // Implemente uma função recursiva chamada Potencia que recebe dois parâmetros base e expoente e calcula a potência de base elevado a expoente.
+    internal class Program
+{
+
+
+    static int ChamarExpoente(int baseUM, int expoente)
+    {
+       
+
+
+        if (expoente == 0) 
+        {
+            return 1;
+        }
+
+        else
+        {
+            return baseUM * ChamarExpoente(baseUM, expoente - 1);
+
+        }
+    }
+
+    // Crie uma função recursiva chamada Soma que recebe um número inteiro positivo n como parâmetro e retorna a soma de todos os números inteiros de 1 até n.
+
+    static int SomarInteiros(int numero) 
+    { int soma = 0;
+       if (numero == 0)
+        {
+            return 0;
+        }
+         
+       else
+        {
+            return soma = 
+
+        }
+    
+    
+    
+    
+    
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    static void Main(string[] args)
+    {
+
+
+        int varBasee, varExpoentee;
+
+
+
+        Console.WriteLine("Informe o expoente");
+        varExpoentee = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Informe a base");
+        varBasee = Convert.ToInt32(Console.ReadLine()); 
+
+        int varResultado = ChamarExpoente(varBasee, varExpoentee);
+        Console.WriteLine(varResultado);
+
+
+
+
+
+
+
+
+
+
+    }
+
+
+} 
+
+
+    
+        
