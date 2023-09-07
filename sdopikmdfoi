@@ -1,0 +1,179 @@
+namespace RECURSDIVIDADE_EXE_1;
+
+
+// Implemente uma função recursiva chamada Potencia que recebe dois parâmetros base e expoente e calcula a potência de base elevado a expoente.
+internal class Program
+{
+
+
+    static int ChamarExpoente(int baseUM, int expoente)
+    {
+
+
+
+        if (expoente == 0)
+        {
+            return 1;
+        }
+
+        else
+        {
+            return baseUM * ChamarExpoente(baseUM, expoente - 1);
+
+        }
+    }
+
+    // Crie uma função recursiva chamada Soma que recebe um número inteiro positivo n como parâmetro e retorna a soma de todos os números inteiros de 1 até n.
+
+    static int SomarInteiros(int numero)
+    {
+
+        if (numero <= 0)
+        {
+            return 0;
+        }
+
+        else
+        {
+            return numero + SomarInteiros(numero - 1);
+
+        }
+
+
+
+
+
+    }
+
+    static int CalcularFibonacci(int fibonacci)
+    {
+
+        if (fibonacci <= 0)
+        {
+            return 0;
+        }
+        else if (fibonacci == 1)
+        {
+            return 1;
+        }
+        else
+        {
+            return CalcularFibonacci(fibonacci - 1) + CalcularFibonacci(fibonacci - 2);
+        }
+
+
+    }
+
+
+    // Desenvolva uma função recursiva chamada Fibonacci que recebe um número inteiro n como parâmetro e retorna o n-ésimo termo da sequência de Fibonacci.
+
+    // Escreva uma função recursiva chamada ContagemRegressiva que recebe um número inteiro positivo n como parâmetro e exibe uma contagem regressiva de n até 1.
+
+    static int ContagemRegressiva(int numeroCont )
+    {
+       
+        if (numeroCont == 0)
+        {
+            return 0;
+        }
+
+
+        else
+        { Console.WriteLine(numeroCont);
+           ;
+            
+          return ContagemRegressiva(numeroCont  - 1);
+        }
+
+
+
+    }
+
+
+     /*while (b != 0)
+       {
+     int temp = b;
+    b = a % b;
+       a = temp;
+                        }
+       return a;
+                    }*/
+    static int CalcularMDC(int a, int b)
+    {
+        if (b == 0)
+        {
+            return a;
+        }
+
+        else
+        {
+            return CalcularMDC(b, a % b);
+        }
+    
+    
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    static void Main(string[] args)
+    {
+
+
+        /* int varBasee, varExpoentee;
+
+
+
+         Console.WriteLine("Informe o expoente");
+         varExpoentee = Convert.ToInt32(Console.ReadLine());
+
+         Console.WriteLine("Informe a base");
+         varBasee = Convert.ToInt32(Console.ReadLine());
+
+         int varResultado = ChamarExpoente(varBasee, varExpoentee);
+         Console.WriteLine(varResultado);*/
+
+
+        /* Console.WriteLine("Informe o número");
+         int varNum = Convert.ToInt32(Console.ReadLine());
+
+         int resultado = SomarInteiros(varNum);
+         Console.WriteLine(resultado);*/
+
+        /* Console.WriteLine("Informe um número");
+         int varNum = Convert.ToInt32(Console.ReadLine());
+
+         int resultado = CalcularFibonacci(varNum);
+         Console.WriteLine(resultado);*/
+
+        /*Console.WriteLine("Informe um número para decrescer");
+        int numero = Convert.ToInt32(Console.ReadLine());
+
+        int resultado = ContagemRegressiva(numero);
+        Console.WriteLine(resultado);*/
+
+        Console.WriteLine("Informe um número");
+        int numUm = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Informe o segundo número");
+        int numDois = Convert.ToInt32(Console.ReadLine());
+
+        int resultado = CalcularMDC(numUm, numDois);
+        Console.WriteLine(resultado);
+
+
+
+
+    }
+
+
+}
