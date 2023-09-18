@@ -1,0 +1,263 @@
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+using System.Text.Json;
+
+namespace ConsoleApp1;
+
+
+internal class Program
+{
+  
+    public class Livro
+    {
+        public int ID { get; set; }                // fiz uma classe com as propriedades ID  e Titulo
+        public string Titulo { get; set; }       // com intuito de identificar cada livro e titulo do livro
+
+    }
+
+    static List<Livro> Lista_livros = new List<Livro>();  // criri uma lista para armazenar livros e declarei a classe livros, que já contem ID e Titulo
+    static int gerarID = 1;     // aqui fiz uma variavel para gerarID inicializando em 1 valor do primeiro livro a ser guardado
+
+    static void ChamarMenu()
+    {
+
+
+        Console.WriteLine("MENU");
+        Console.WriteLine("1: Inserir Livro");
+        Console.WriteLine("2: Mostrar Livro");  // função para retornar apenas a impressão do menu
+        Console.WriteLine("3: Remover Livro");
+        Console.WriteLine("4: Editar Livro");
+        Console.WriteLine("5: Sair");
+
+
+ }
+    static void ExecutarMenu()
+    {
+        while (true)                       // função que vai executar o menu 
+        {                                 // while(true) para manter o menu até o case 5 para sair do menu 
+                                            // variavel opcão do tipo string para armazenar o digito do usuario
+                                            // switch case com variavel opcao  para dar funcionalidade ao menu 
+           ChamarMenu();           // cada case retorna uma função de acordo com o menu, menos o case 5 que é a condição de saida do while
+                                 
+            string opcao = Console.ReadLine();
+
+            switch (opcao)
+            {
+                case "1":                              
+
+                    InserirLivro();
+
+                    break;
+                case "2":
+                    MostrarLivros();
+
+                    break;
+                case "3":
+                    
+                    ExcluirArquivoJson();
+                    RemoverLivro();
+
+                    break;
+                case "4":
+                    
+                    EditarLivro();
+                    break;
+
+                case "5":
+                    string json = JsonSerializer.Serialize(Lista_livros);      // chamando função para 
+                   SalvarJsonEmArquivo(json);  // chamando função para salvar em um txt. 
+                    Console.WriteLine("Volte Sempre!");                                  
+                    return;
+                default:
+                    Console.WriteLine("Opção inválida. Tente novamente.");
+                    break;
+            }
+        }
+    }
+
+
+
+
+
+
+ static void InserirLivro()  // funcao para inserir  lista 
+    {
+
+        Console.WriteLine("Insira um livro: ");   
+
+        Console.Write("Título: ");      
+        string titulo = Console.ReadLine();    
+
+        Livro novoLivro = new Livro { ID = gerarID, Titulo = titulo };   // fiz um objeto do tipo livro
+        Lista_livros.Add(novoLivro); // método para adicionar valor a liste de livros, instanciei o objeto novoLivro
+        gerarID++; 
+
+        Console.WriteLine("Livro cadastrado");
+        Console.ReadLine();
+    }
+    static void SalvarJsonEmArquivo(string json) 
+    {
+
+        string caminhoArquivo = @"C:\Users\Guilherme\OneDrive - SENAC-SC\PROGRAMA CRUD 19.09.23\Caminho_Json.txt";
+        
+
+        File.WriteAllText(caminhoArquivo, json);
+
+
+    }
+
+    static void SerializarLivrosParaJson()
+    {
+        var json = JsonSerializer.Serialize(Lista_livros);
+        Console.WriteLine(json);
+    }
+
+
+
+    static void MostrarLivros()
+    {
+        Console.Clear();
+        Console.WriteLine("Lista de Livros:");
+
+        for (int i = 0; i < Lista_livros.Count; i++)
+        {
+            Console.WriteLine($"{i + 1}. ID: {Lista_livros[i].ID}, Título: {Lista_livros[i].Titulo}");
+        }
+
+        Console.WriteLine("Pressione Enter para voltar ao menu.");
+        Console.ReadLine();
+    }
+
+
+    static void RemoverLivro()
+    {
+        Console.Clear();
+        Console.WriteLine("Remover um livro:");
+
+        if (Lista_livros.Count == 0)
+        {
+            Console.WriteLine("A lista de livros está vazia.");
+            Console.ReadLine();
+            return;
+        }
+
+        Console.Write("Informe o ID do livro a ser removido: ");
+        if (int.TryParse(Console.ReadLine(), out int livroID)) //método tryparse para converter valor da variavel livroID e verificar se e um numero inteiro (continua..)
+           // instanciado em uma condicional
+        {
+            int indice = Lista_livros.FindIndex(livro => livro.ID == livroID);//função para achar o indice e comparar o ID do objeto livro com fornecido pelo usuario.
+
+            if (indice != -1) 
+            {
+                
+                Lista_livros.RemoveAt(indice); 
+                Console.WriteLine($" O livro  foi removido com sucesso.");
+            }
+            
+             else
+            {
+                Console.WriteLine("livro não encontrado");
+            }
+        }
+       
+        
+        else
+        {
+            Console.WriteLine("ID inválido");
+        }
+
+        Console.ReadLine();
+    }
+   
+
+    static void ExcluirArquivoJson()
+    {
+        string caminhoArquivo = @"C:\Users\Guilherme\OneDrive - SENAC-SC\PROGRAMA CRUD 19.09.23\Caminho_Json.txt";
+
+        if (File.Exists(caminhoArquivo))
+        {
+            File.Delete(caminhoArquivo);
+            Console.WriteLine("Arquivo de JSON excluído com sucesso.");
+        }
+        else
+        {
+            Console.WriteLine("O arquivo de JSON não foi encontrado.");
+        }
+    }
+
+   
+     static void EditarLivro()
+     {
+         Console.Clear();
+         Console.WriteLine("Editar um livro:");
+
+         if (Lista_livros.Count == 0)
+         {
+             Console.WriteLine("A lista de livros está vazia.");
+             Console.ReadLine();
+             return;
+         }
+
+         Console.Write("Informe o ID do livro a ser editado: ");
+         if (int.TryParse(Console.ReadLine(), out int livroID))
+         {
+             int indiceLivroEditar = Lista_livros.FindIndex(livro => livro.ID == livroID);
+
+             if (indiceLivroEditar != -1)
+             {
+                 Console.Write("Novo título: ");
+                 string novoTitulo = Console.ReadLine();
+
+                 Lista_livros[indiceLivroEditar].Titulo = novoTitulo;
+                 Console.WriteLine("Livro editado com sucesso!");
+
+                    string json = JsonSerializer.Serialize(Lista_livros);
+                    SalvarJsonEmArquivo(json);
+             }
+             else
+             {
+                 Console.WriteLine("Livro não encontrado.");
+             }
+         }
+         else
+         {
+             Console.WriteLine("ID inválido. Informe um número válido.");
+         }
+
+         Console.ReadLine();
+     }
+
+
+
+
+    static void Main(string[] args)
+    {
+      string caminhoArquivo = @"C:\Users\Guilherme\OneDrive - SENAC-SC\PROGRAMA CRUD 19.09.23\Caminho_Json.txt";
+        if (File.Exists(caminhoArquivo))
+        {
+            string json = File.ReadAllText(caminhoArquivo);                              
+            Lista_livros = JsonSerializer.Deserialize<List<Livro>>(json);
+            gerarID = Lista_livros.Count + 1; 
+        }
+
+
+        ExecutarMenu();
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+}
