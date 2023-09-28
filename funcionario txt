@@ -1,0 +1,40 @@
+using Projeto_RH;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PROJETO_Conce_POO
+{
+    internal class Funcionario : Pessoas
+    {
+
+        public double Salario { get; set; }
+        public string Cargo { get; set; }
+
+
+        public void ChamarFuncionarioCLasse() {
+        Console.WriteLine("Insira o nome do cliente");
+            nome = Console.ReadLine();
+
+        Console.WriteLine("Insira a idade do cliente");
+            idade = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Insira o cpf do cliente");
+            cpf = Console.ReadLine();
+
+        Console.WriteLine("Insira o nascimento do cliente");
+            data_nascimento = Console.ReadLine();
+
+        Console.WriteLine("Insira a origem do cliente");
+            origem = Console.ReadLine();
+
+         }
+
+
+
+
+
+    }
+}
