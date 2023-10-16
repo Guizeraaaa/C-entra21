@@ -1,0 +1,90 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace testePI
+{
+
+    
+    public class ProdutoModel 
+    {
+
+        private  List<Produto> produtos = new List<Produto>();
+
+
+
+
+
+
+
+        public  void CadastrarProduto()
+        {
+            Produto produto = new Produto();
+            produto.Popular();
+            produtos.Add(produto);
+
+
+        }
+
+        public void VisualizarProduto()
+        {
+            for (int i = 0; i < produtos.Count; i++)
+            {
+                Console.Write(i);
+                produtos[i].Listar();
+            }
+        }
+
+        public void EditarProduto()
+        {
+
+
+            VisualizarProduto();
+            Console.WriteLine("Digite o ID do item a ser alterado:");
+            string idTemp = Console.ReadLine();
+
+            int index = produtos.FindIndex(produto => produto.id == idTemp);
+
+            if (index >= 0)
+            {
+                produtos[index].Popular();
+                Console.WriteLine("Recadastro Insira as seguintes informações: ");
+            }
+
+            else
+            {
+                Console.WriteLine("ID do produto não encontrado.");
+            }
+            
+            
+            
+            
+            
+            }
+
+        public void ExcluirProduto()
+        {
+            VisualizarProduto();
+            Console.WriteLine("Digite o ID do item a ser excluído:");
+            string idParaExcluir = Console.ReadLine();
+
+            int index = produtos.FindIndex(produto => produto.id == idParaExcluir);
+
+            if (index >= 0)
+            {
+                produtos.RemoveAt(index);
+                Console.WriteLine("Produto excluído com sucesso!");
+            }
+            else
+            {
+                Console.WriteLine("ID do produto não encontrado.");
+            }
+        }
+
+
+
+
+    }
+}
