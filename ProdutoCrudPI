@@ -1,0 +1,57 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace testePI
+{
+    internal class Produto : ProdutoModel
+    {
+
+        public string id { get; set; }
+        public string Nome { get; set; }
+        public double Preco { get; set; }
+
+
+        public void Popular()
+        {
+            Console.WriteLine("Digite o nome do produto");
+            Nome = Console.ReadLine();
+
+            Console.WriteLine("Digite o ID do produto");
+            id = Console.ReadLine();
+
+           
+
+            Console.WriteLine("Digite o preço do produto");
+            Preco = Convert.ToDouble(Console.ReadLine());
+        }
+
+
+        public void Listar()
+        {
+            Console.WriteLine($" {Nome} | {id}  | {Preco}");
+        }
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
