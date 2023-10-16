@@ -1,0 +1,67 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace testePI
+{
+    
+
+    public class Menu
+    {
+        
+
+
+        public void MostrarMenuProduto(ProdutoModel produtoModel)
+        {
+            while (true) 
+            {
+                Console.Clear();
+                Console.WriteLine(" Menu de Produtos");
+                Console.WriteLine();
+                Console.WriteLine("1 - Adicionar Produto");
+                Console.WriteLine("2 - Visualizar Produto");
+                Console.WriteLine("3 - Alterar Produto");
+                Console.WriteLine("4 - Excluir Produto");
+                Console.WriteLine("5 - Encerrar");
+
+                string escolha = Console.ReadLine();
+
+                switch (escolha)
+                {
+                    case "1":
+                        produtoModel.CadastrarProduto();
+                        Console.WriteLine("Produto adicionado com sucesso!");
+                        Console.ReadLine();
+                        break;
+                    case "2":
+                        produtoModel.VisualizarProduto();
+                        Console.WriteLine("Pressione qualquer tecla para continuar");
+                        Console.ReadLine();
+                        break;
+                    case "3":
+                        produtoModel.EditarProduto();
+                        Console.WriteLine("Produto alterado com sucesso!");
+                        break;
+                    case "4":
+                        produtoModel.ExcluirProduto();
+                        Console.WriteLine("Produto removido com sucesso!");
+                        break;
+                    case "5":
+                        Console.WriteLine("Volte Sempre");
+                        return;
+                        break;
+                    default:
+                        Console.WriteLine("Opção inválida");
+                        break;
+                }
+            }
+        }
+    }
+
+
+
+}
+        
+
